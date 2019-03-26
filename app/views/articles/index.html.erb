@@ -7,6 +7,6 @@
       class: 'article-title', id: "article-#{article.id}" %>
     </li>
   <% end %>
+  <%= link_to "Create a New Article", new_article_path, class: "new-article" %>
+  
 </ul>
-
-<%= link_to "Create a New Article", new_article_path, class: "new-article" %>
