@@ -11,12 +11,13 @@ RSpec.describe "a user edits an article" do
 
       expect(current_path).to eq(edit_article_path(article_1))
 
-      fill_in "article[title]", with: "Edited Article"
+      fill_in "article[title]", with: "Article 1"
       fill_in "article[body]", with: "I've been edited!"
       click_button "Update Article"
 
-      expect(page).to have_content("Edited Article")
+      expect(page).to have_content("Article 1")
       expect(page).to have_content("I've been edited!")
+      expect(page).to have_content("Article '#{article_1.title}' Updated!")
     end
   end
 end
